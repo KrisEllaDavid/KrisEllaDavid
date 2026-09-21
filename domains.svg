@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 210" width="1400" height="210" role="img" aria-label="Three domains: Software Engineering, Design Works, Networking and Cloud — connected by a travelling signal">
+  <!--
+    The three domains, with a signal running through them.
+
+    Hand-authored rather than fetched from a stats service: this file lives in
+    the repository, so it cannot rate-limit, go down, or start showing someone
+    else's branding. It also means the palette is exactly the portfolio's —
+    #1a6ef5 is the mark's blue, #4d9aff the accent, #070b11 the page.
+
+    Animated with CSS inside the SVG, which browsers run even when the file is
+    loaded through an <img> tag, as GitHub serves it.
+  -->
+  <defs>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1220" />
+      <stop offset="55%" stop-color="#070b11" />
+      <stop offset="100%" stop-color="#0b1524" />
+    </linearGradient>
+
+    <linearGradient id="wire" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a6ef5" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#4d9aff" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#1a6ef5" stop-opacity="0.25" />
+    </linearGradient>
+
+    <radialGradient id="spark">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#4d9aff" />
+      <stop offset="100%" stop-color="#4d9aff" stop-opacity="0" />
+    </radialGradient>
+
+    <style><![CDATA[
+      /* The signal: one dot, travelling the whole wire, over and over. */
+      .signal { animation: run 5.6s linear infinite; }
+      @keyframes run {
+        0%   { transform: translateX(0);    opacity: 0; }
+        6%   { opacity: 1; }
+        94%  { opacity: 1; }
+        100% { transform: translateX(1180px); opacity: 0; }
+      }
+
+      /* Each node breathes, staggered, so the row is never quite still. */
+      .ring  { transform-box: fill-box; transform-origin: center;
+               animation: breathe 3.8s ease-in-out infinite; }
+      .n2 .ring { animation-delay: -1.27s; }
+      .n3 .ring { animation-delay: -2.53s; }
+      @keyframes breathe {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50%      { opacity: 0.9;  transform: scale(1.12); }
+      }
+
+      .core { animation: glow 3.8s ease-in-out infinite; }
+      .n2 .core { animation-delay: -1.27s; }
+      .n3 .core { animation-delay: -2.53s; }
+      @keyframes glow {
+        0%, 100% { opacity: 0.6; }
+        50%      { opacity: 1; }
+      }
+
+      /* A slow sheen across the whole card, so the surface reads as lit. */
+      .sheen { animation: sweep 9s ease-in-out infinite; }
+      @keyframes sweep {
+        0%, 100% { opacity: 0; transform: translateX(-260px); }
+        45%      { opacity: 0.5; }
+        100%     { transform: translateX(1500px); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .signal, .ring, .core, .sheen { animation: none; }
+        .sheen { opacity: 0; }
+      }
+    ]]></style>
+  </defs>
+
+  <rect width="1400" height="210" rx="14" fill="url(#field)" />
+  <rect width="1400" height="210" rx="14" fill="none" stroke="#4d9aff" stroke-opacity="0.16" />
+
+  <!-- The sheen, clipped to the card by the rounded rect above it. -->
+  <g clip-path="inset(0 round 14px)">
+    <rect class="sheen" x="-200" y="0" width="180" height="210" fill="#4d9aff" opacity="0" />
+  </g>
+
+  <!-- The wire the signal runs along. -->
+  <line x1="110" y1="100" x2="1290" y2="100" stroke="url(#wire)" stroke-width="2.5" />
+
+  <g class="signal">
+    <circle cx="110" cy="100" r="26" fill="url(#spark)" opacity="0.5" />
+    <circle cx="110" cy="100" r="4.5" fill="#ffffff" />
+  </g>
+
+  <!-- Software Engineering -->
+  <g class="node n1" transform="translate(240 100)">
+    <circle class="ring" r="30" fill="none" stroke="#4d9aff" stroke-width="1.5" opacity="0.35" />
+    <circle class="core" r="9" fill="#1a6ef5" />
+    <text y="62" text-anchor="middle" fill="#e7edf5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" font-weight="600">Software Engineering</text>
+    <text y="84" text-anchor="middle" fill="#7c8da3" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14">web · mobile · desktop</text>
+  </g>
+
+  <!-- Design Works -->
+  <g class="node n2" transform="translate(700 100)">
+    <circle class="ring" r="30" fill="none" stroke="#4d9aff" stroke-width="1.5" opacity="0.35" />
+    <circle class="core" r="9" fill="#1a6ef5" />
+    <text y="62" text-anchor="middle" fill="#e7edf5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" font-weight="600">Design Works</text>
+    <text y="84" text-anchor="middle" fill="#7c8da3" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14">identity · interface · systems</text>
+  </g>
+
+  <!-- Networking &amp; Cloud -->
+  <g class="node n3" transform="translate(1160 100)">
+    <circle class="ring" r="30" fill="none" stroke="#4d9aff" stroke-width="1.5" opacity="0.35" />
+    <circle class="core" r="9" fill="#1a6ef5" />
+    <text y="62" text-anchor="middle" fill="#e7edf5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" font-weight="600">Networking &amp; Cloud</text>
+    <text y="84" text-anchor="middle" fill="#7c8da3" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14">deploy · scale · route</text>
+  </g>
+
+  <text x="40" y="34" fill="#4d9aff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2.5" font-weight="600">THREE DOMAINS</text>
+</svg>
