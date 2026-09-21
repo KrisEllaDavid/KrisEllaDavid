@@ -1,10 +1,8 @@
 <!--
-  Draft profile README for github.com/KrisEllaDavid
+  This repository is named after the account on purpose: GitHub renders this
+  one README on the profile page at github.com/KrisEllaDavid.
 
-  Goes in a repository named exactly `KrisEllaDavid` — GitHub renders that
-  one repo's README on the profile page. It does not exist yet.
-
-  Colours are the portfolio's own: #1a6ef5 is the mark's blue, #4d9aff the
+  Colours are the portfolio's own — #1a6ef5 is the mark's blue, #4d9aff the
   accent, #070b11 the page background. Badge colours are set explicitly so
   the row reads as one palette instead of the default pick-and-mix.
 -->
