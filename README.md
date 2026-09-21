@@ -10,7 +10,7 @@
 <h1 align="center">Kris David Steeve Ella</h1>
 
 <p align="center">
-  <strong>Digital Engineer</strong> — I design and ship products end to end:
+  <strong>Digital Systems Engineer</strong>, I design and ship products end to end:
   <br />
   the interface, the API behind it, and the cloud that runs them.
 </p>
